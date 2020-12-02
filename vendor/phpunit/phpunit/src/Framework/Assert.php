@@ -430,18 +430,6 @@ abstract class Assert
     }
 
     /**
-     * @throws ExpectationFailedException
-     */
-    public static function assertObjectEquals(object $expected, object $actual, string $method = 'equals', string $message = ''): void
-    {
-        static::assertThat(
-            $actual,
-            static::objectEquals($expected, $method),
-            $message
-        );
-    }
-
-    /**
      * Asserts that a variable is empty.
      *
      * @throws ExpectationFailedException
@@ -1365,7 +1353,7 @@ abstract class Assert
      *
      * @psalm-template ExpectedType of object
      * @psalm-param class-string<ExpectedType> $expected
-     * @psalm-assert =ExpectedType $actual
+     * @psalm-assert ExpectedType $actual
      */
     public static function assertInstanceOf(string $expected, $actual, string $message = ''): void
     {
@@ -2793,6 +2781,18 @@ abstract class Assert
     public static function resetCount(): void
     {
         self::$count = 0;
+    }
+
+    /**
+     * @throws ExpectationFailedException
+     */
+    public function assertObjectEquals(object $expected, object $actual, string $method = 'equals', string $message = ''): void
+    {
+        static::assertThat(
+            $actual,
+            static::objectEquals($expected, $method),
+            $message
+        );
     }
 
     private static function detectLocationHint(string $message): ?array

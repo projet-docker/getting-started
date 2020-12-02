@@ -867,9 +867,13 @@ final class TestResult implements Countable
                     $linesToBeUsed
                 );
             } catch (UnintentionallyCoveredCodeException $cce) {
-                $unintentionallyCoveredCodeError = new UnintentionallyCoveredCodeError(
-                    'This test executed code that is not listed as code to be covered or used:' .
-                    PHP_EOL . $cce->getMessage()
+                $this->addFailure(
+                    $test,
+                    new UnintentionallyCoveredCodeError(
+                        'This test executed code that is not listed as code to be covered or used:' .
+                        PHP_EOL . $cce->getMessage()
+                    ),
+                    $time
                 );
             } catch (OriginalCodeCoverageException $cce) {
                 $error = true;
@@ -890,12 +894,6 @@ final class TestResult implements Countable
             $this->addFailure($test, $e, $time);
         } elseif ($warning) {
             $this->addWarning($test, $e, $time);
-        } elseif (isset($unintentionallyCoveredCodeError)) {
-            $this->addFailure(
-                $test,
-                $unintentionallyCoveredCodeError,
-                $time
-            );
         } elseif ($this->beStrictAboutTestsThatDoNotTestAnything &&
             !$test->doesNotPerformAssertions() &&
             $test->getNumAssertions() === 0) {

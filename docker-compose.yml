@@ -1,0 +1,42 @@
+# Conteneur PHP nommé php
+
+php:
+
+build: ./engine/php_server/
+
+ports: - 80:80
+volumes: - /home/article/docker/ovh/www/html:/var/www/html
+links: - db
+dns: 
+  - 208.67.222.222 
+  - 208.67.220.220
+
+# Description du conteneur
+
+# Conteneur MySQL nommé db (database)
+
+db:
+  image: mysql
+
+environment:
+  MYSQL_ROOT_PASSWORD: Secret
+  MYSQL_DATABASE: bddfauq
+  MYSQL_USER: testusermethodo
+  MYSQL_PASSWORD: passwordtestuser
+  volumes: - /home/article/docker/ovh/mysqld_charset.cnf:/etc/mysql/conf.d/mysqld_charset.cnf
+
+# Description du conteneur
+
+# Conteneur PhpMyAdmin nommé phpmyadmin
+
+phpmyadmin:
+
+image: phpmyadmin/phpmyadmin
+
+links: - bddfauq
+ports: - 8181:80
+environment:
+  MYSQL_USERNAME: root
+  MYSQL_ROOT_PASSWORD: Secret
+
+# Description du conteneur

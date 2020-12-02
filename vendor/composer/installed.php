@@ -152,12 +152,12 @@
     ),
     'phpunit/phpunit' => 
     array (
-      'pretty_version' => '9.4.4',
-      'version' => '9.4.4.0',
+      'pretty_version' => '9.4.0',
+      'version' => '9.4.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '6535e637961f0829832621dc1b7308c2d24a799e',
+      'reference' => 'ef533467a7974c4b6c354f3eff42a115910bd4e5',
     ),
     'sebastian/cli-parser' => 
     array (

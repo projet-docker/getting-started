@@ -941,7 +941,7 @@ abstract class TestCase extends Assert implements Reorderable, SelfDescribing, T
     public function getAnnotations(): array
     {
         return TestUtil::parseTestMethodAnnotations(
-            static::class,
+            get_class($this),
             $this->name
         );
     }
@@ -970,7 +970,7 @@ abstract class TestCase extends Assert implements Reorderable, SelfDescribing, T
     public function getSize(): int
     {
         return TestUtil::getSize(
-            static::class,
+            get_class($this),
             $this->getName(false)
         );
     }
@@ -1115,7 +1115,7 @@ abstract class TestCase extends Assert implements Reorderable, SelfDescribing, T
         clearstatcache();
         $currentWorkingDirectory = getcwd();
 
-        $hookMethods = TestUtil::getHookMethods(static::class);
+        $hookMethods = TestUtil::getHookMethods(get_class($this));
 
         $hasMetRequirements = false;
 
@@ -1477,7 +1477,7 @@ abstract class TestCase extends Assert implements Reorderable, SelfDescribing, T
         $id = $this->name;
 
         if (strpos($id, '::') === false) {
-            $id = static::class . '::' . $id;
+            $id = get_class($this) . '::' . $id;
         }
 
         if ($this->usesDataProvider()) {
@@ -2029,7 +2029,7 @@ abstract class TestCase extends Assert implements Reorderable, SelfDescribing, T
         }
 
         $missingRequirements = TestUtil::getMissingRequirements(
-            static::class,
+            get_class($this),
             $this->name
         );
 
