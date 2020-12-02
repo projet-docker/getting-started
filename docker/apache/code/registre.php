@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../includes/stylecimetiere.css">
+    <link rel="stylesheet" href="includes/stylecimetiere.css">
     <title>Registre du cimetière</title>
     <style>
     
@@ -13,14 +13,14 @@
 
   <ul id="header">
     <header>
-    <img src="../images/logoban.png">
+    <img src="images/logoban.png">
     </header>
   </ul>
 
   <body>
       <section>
           <label>Liste des présents défunts de notre cimetière :</label>
-              <?php require_once("../includes/pdo.php");
+              <?php require_once("includes/pdo.php");
               $date = date("d-m-Y");
               echo "<h2>Registre du $date</h2>";
               $requete = $db->query("SELECT * FROM REGISTRE ORDER BY id ASC;");
