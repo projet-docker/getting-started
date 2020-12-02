@@ -1,0 +1,147 @@
+  /*Paramètres de la page*/
+  body{
+	padding: 0px;
+	margin:0px;
+	background-image: url('../../images/bg.jpg');
+	background-repeat: repeat;
+}
+table {
+  margin : 0 auto;
+  border: medium solid #52CA46;
+  border-collapse: collapse;
+  width: 70%;
+  }
+  th {
+  font-family: monospace;
+  font-size:25px;
+  border: thin solid #52CA46;
+  background-color: #8BFF5E;
+  }
+  td {
+  font-family: sans-serif;
+  border: thin solid #52CA46;
+  text-align: center;
+  background-color: #C7FFB2;
+  }
+  caption {
+  font-family: sans-serif;
+  }
+/*Bannière*/
+#header{
+	margin: auto;
+	margin-right: auto;
+	margin-left: auto;
+	border-bottom: 2px solid #232323;
+	box-shadow: 2px 2px 2px 2px;
+  color: #0F0F0F;
+	background-image: linear-gradient(#555,#999);
+}
+section{
+	background-color: #DDD;
+	border-width: 3px;
+  border-top-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  box-shadow: 2px 2px 2px 2px #0F0F0F;
+	border-color: #232323;
+	position: relative;
+	border-style: solid;
+  margin: 2% auto;
+  font-family: cursive;
+  padding: 1%;
+  width: 1250px;
+  z-index: 0;
+}
+label{
+  padding: 5px;;
+	font-family: cursive;
+	background-color: #52CA46;
+  border-top-left-radius: 12.5px;
+  border-bottom-right-radius: 12.5px;
+	color: black;
+	box-shadow: 4px 4px 4px #414343;
+	margin-left: 3.1%;
+}
+.bouton_submit_add{
+  background-color: #85AEBB;
+  color: black;
+  border: 1px solid #607A82;
+  padding: 4px 12px;
+  margin: 8px 0;
+  cursor: pointer;
+  width: 15%;
+  font-family: cursive;
+}
+.bouton_submit_add:hover {
+    background-color: #00EA1B;
+    color: #EEE;
+    border: 1px solid #009811;
+    animation: fadeIn ease 1s;
+  -webkit-animation: fadeIn ease 1s;
+  -moz-animation: fadeIn ease 1s;
+  -o-animation: fadeIn ease 1s;
+  -ms-animation: fadeIn ease 1s;
+}
+.bouton_submit_supp{
+  background-color: #85AEBB;
+  color: black;
+  border: 1px solid #607A82;
+  padding: 4px 12px;
+  margin: 8px 0;
+  cursor: pointer;
+  width: 15%;
+  font-family: cursive;
+}
+.bouton_submit_supp:hover {
+    background-color: #FF1A1A;
+    color: #EEE;
+    border: 1px solid #E00000;
+    animation: fadeIn ease 1s;
+  -webkit-animation: fadeIn ease 1s;
+  -moz-animation: fadeIn ease 1s;
+  -o-animation: fadeIn ease 1s;
+  -ms-animation: fadeIn ease 1s;
+}
+input[type=text]{
+  text-align: center;
+  font-family: cursive;
+  width: 10%;
+  padding: 5px;
+  margin-top: 20px;
+}
+h3{
+  padding: 5px;;
+  font-family: cursive;
+  background-color: #52CA46;
+  border-top-left-radius: 12.5px;
+  border-bottom-right-radius: 12.5px;
+  color: black;
+  box-shadow: 4px 4px 4px #414343;
+  margin-left: 1%;
+  width: 35%;
+}
+
+  a{text-decoration: none;}
+  @keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
